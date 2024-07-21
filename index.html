@@ -27,23 +27,38 @@
       setTimeout(() => {
         countryButton3.setAttribute("visible", true);
       }, 900);
+      setTimeout(() => {
+        text.setAttribute("visible", true);
+      }, 1200);
 
       let currentTab = '';
       countryButton0.addEventListener('click', function(evt) {
-        text.setAttribute("value", "Japan");
+        text.setAttribute("value", "Go to Japan Wiki");
         currentTab = 'country0';
+        if (currentTab === 'country0') {
+          window.location.href = "https://ja.wikipedia.org/wiki/%E6%9C%88";
+        }
       });
       countryButton1.addEventListener('click', function(evt) {
-        text.setAttribute("value", "China");
+        text.setAttribute("value", "Go to China wiki");
         currentTab = 'country1';
+        if (currentTab === 'country1') {
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9C%88%E7%90%83";
+        }
       });
       countryButton2.addEventListener('click', function(evt) {
-        text.setAttribute("value", "Taiwan");
+        text.setAttribute("value", "Go to Taiwan Wiki");
         currentTab = 'country2';
+        if (currentTab === 'country2') {
+          window.location.href = "https://zh.wikipedia.org/wiki/%E6%9C%88%E7%90%83";
+        }
       });
       countryButton3.addEventListener('click', function(evt) {
-        text.setAttribute("value", "United States of America");
+        text.setAttribute("value", "Go to America Wiki");
         currentTab = 'country3';
+        if (currentTab === 'country3') {
+          window.location.href = "https://en.wikipedia.org/wiki/Moon";
+        }
       });
 
       // text.addEventListener('click', function(evt) {
@@ -295,7 +310,7 @@
 </head>
 
 <body>
-  <div style="color: #f00;">Ver2.2.5</div>
+  <div style="color: #f00;">Ver2.3.9</div>
 
   <div class="example-container">
     <div id="example-scanning-overlay" class="">
@@ -368,8 +383,8 @@
         <a-gltf-model id="avatar" rotation="" position="0 -0.085 0" scale="0 0 0" src="#avatarModel" gltf-model=""
         animation="property: rotation; from: 0 -20 0; to: 0 20 0; dur: 2500; easing: easeInOutSine; loop: true; dir: alternate"></a-gltf-model>
 
-        <!-- <a-text id="text" class="clickable" value="" color="black" align="center" width="1"
-        position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text> -->
+        <a-text visible="false" id="text" class="clickable" value="Tap the flag. Go to Wikipedia." color="black" align="center" width="1"
+        position="0 -0.375 0" geometry="primitive:plane; height: 0.1; width: 1;" material="opacity: 0.5" text=""></a-text>
       </a-entity>
       <canvas class="a-canvas" data-aframe-canvas="true" data-engine="three.js r147" width="54" height="960"></canvas>
       <div class="a-loader-title" style="display: none;"></div>
